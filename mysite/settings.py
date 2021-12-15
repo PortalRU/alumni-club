@@ -10,7 +10,10 @@ SECRET_KEY = 'django-insecure-wdh*p2pzvsety9lnkpk5%u17d6k_fuwltn%f8j48y3z=dxu$g0
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '127.0.0.1'
+    'genpk.herokuapp.com'
+]
 
 INSTALLED_APPS = [
     'grappelli',
@@ -36,6 +39,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
