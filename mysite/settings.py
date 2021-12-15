@@ -1,5 +1,6 @@
 import os, sys
 from pathlib import Path
+import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_DIR = Path(__file__).resolve().parent
@@ -114,3 +115,5 @@ LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 
 GRAPPELLI_ADMIN_TITLE = "Клуб выпускников - административная панель"
+
+django_heroku.settings(locals())
