@@ -1,0 +1,1 @@
+web: gunicorn alumni-club.wsgi --log-file -
