@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+<section class="text-center team-clean">
+	<div class="container">
+		<div class="jumbotron bg-transparent">
+			<h1 class="display-4">Добро пожаловать в "Клуб выпускников" для государственного учебного заведения</h1>
+			<p class="lead">Это официальный сайт "Клуба выпускников" для государственного учебного заведения</p>
+			<hr class="my-4">
+			<p>Вы можете узнать подробнее о "Клубе" нажав на кнопку ниже</p>
+			<a class="btn btn-info btn-lg" href="#" role="button">Узнать больше</a>
+		</div>
+	</div>
+</section>
+<section class="text-center team-clean">
+	<div class="container">
+		<div class="intro">
+			<h2 class="text-center"><strong>Наши известные выпускники</strong></h2>
+		</div>
+		<div class="row people">
+			<div class="col-md-6 col-lg-4 item"><img class="img-thumbnail" src="{% static 'images/noImg.png' %}">
+				<h3 class="name"><strong>Иванов Иван Иванович</strong></h3>
+				<p class="description">Выпускник 1975 года. Родился в городе N и теперь является его главой и местным дипутатом</p>
+			</div>
+			<div class="col-md-6 col-lg-4 item"><img class="img-thumbnail" src="{% static 'images/noImg.png' %}">
+				<h3 class="name"><strong>Иванов Иван Иванович</strong></h3>
+				<p class="description">Выпускник 1975 года. Родился в городе N и теперь является его главой и местным дипутатом</p>
+			</div>
+			<div class="col-md-6 col-lg-4 item"><img class="img-thumbnail" src="{% static 'images/noImg.png' %}">
+				<h3 class="name"><strong>Иванов Иван Иванович</strong></h3>
+				<p class="description">Выпускник 1975 года. Родился в городе N и теперь является его главой и местным дипутатом</p>
+			</div>
+		</div><a class="btn btn-info text-uppercase" role="button" href="/graduates">Подробнее о выпускниках</a>
+	</div>
+</section>
+{% if latest_articles_list %}
+<section class="article-list">
+	<div class="container">
+		<div class="intro">
+			<h2 class="text-center">Новости и события</h2>
+		</div>
+		<div class="row articles">
+			{% for a in latest_articles_list %}
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title"><strong>{{a.article_title}}</strong></h5>
+						<h6 class="card-subtitle mb-2 text-muted">{{a.article_date}}</h6>
+						<p class="card-text">{{a.article_shorttext}}</p>
+						<a class="card-link" href="{% url 'articles:detail' a.article_alias %}">Читать</a>
+					</div>
+				</div>
+			</div>	
+
+			{% endfor %}
+		</div>
+	</div>
+</section>
+{% else %}
+News not found:(
+{% endif %}
+{% endblock %}
