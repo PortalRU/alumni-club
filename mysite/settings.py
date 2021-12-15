@@ -117,3 +117,5 @@ LOGOUT_REDIRECT_URL = "/"
 GRAPPELLI_ADMIN_TITLE = "Клуб выпускников - административная панель"
 
 django_heroku.settings(locals())
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
