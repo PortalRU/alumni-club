@@ -1,1 +1,1 @@
-web: gunicorn alumni-club.wsgi --log-file -
+web: gunicorn mysite.wsgi --log-file -
