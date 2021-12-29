@@ -9,7 +9,7 @@ sys.path.append(str(os.path.join(PROJECT_DIR, 'apps')))
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
