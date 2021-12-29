@@ -24,7 +24,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 ALLOWED_HOSTS = (
-    'your-app-name.herokuapp.com',
+    'alumni-club.herokuapp.com',
     'localhost',
 )
 
