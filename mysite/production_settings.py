@@ -7,11 +7,21 @@ PROJECT_DIR = Path(__file__).resolve().parent
 
 sys.path.append(str(os.path.join(PROJECT_DIR, 'apps')))
 
-SECRET_KEY = 'django-insecure-wdh*p2pzvsety9lnkpk5%u17d6k_fuwltn%f8j48y3z=dxu$g0'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = (
+    'alumni-club.herokuapp.com',
+    'localhost',
+)
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 INSTALLED_APPS = [
     'grappelli',
