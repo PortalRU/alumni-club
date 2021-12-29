@@ -13,7 +13,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1'
-    'genpk.herokuapp.com'
+    'alumni-club.herokuapp.com'
 ]
 
 INSTALLED_APPS = [
