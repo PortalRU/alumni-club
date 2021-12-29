@@ -1,5 +1,8 @@
 import os
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+PROJECT_DIR = Path(__file__).resolve().parent
+
 DEBUG = False
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
