@@ -9,7 +9,7 @@ sys.path.append(str(os.path.join(PROJECT_DIR, 'apps')))
 
 SECRET_KEY = 'django-insecure-wdh*p2pzvsety9lnkpk5%u17d6k_fuwltn%f8j48y3z=dxu$g0'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1'
