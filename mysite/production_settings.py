@@ -123,10 +123,3 @@ STATICFILES_FINDERS = (
 )
 
 ENV = os.environ.get('ENV')
-
-if ENV == 'prod':
-    try:
-        from .production_settings import *
-        MIDDLEWARE.append('whitenoise.middleware.WhiteNoiseMiddleware',)
-    except ImportError:
-        pass
