@@ -11,7 +11,7 @@ SECRET_KEY = 'django-insecure-wdh*p2pzvsety9lnkpk5%u17d6k_fuwltn%f8j48y3z=dxu$g0
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'grappelli',
@@ -26,7 +26,8 @@ INSTALLED_APPS = [
     'articles.apps.ArticlesConfig',
     'register.apps.RegisterConfig',
     'bootstrap4',
-    'crispy_forms',
+    'crispy_forms',,
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
