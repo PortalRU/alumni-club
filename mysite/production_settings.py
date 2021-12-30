@@ -1,6 +1,7 @@
 import os, sys
 from pathlib import Path
 import django_heroku
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_DIR = Path(__file__).resolve().parent
@@ -9,9 +10,9 @@ sys.path.append(str(os.path.join(PROJECT_DIR, 'apps')))
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'alumni-club.herokuapp.com']
 
 LOGGING = {
     'version': 1,
@@ -66,6 +67,7 @@ INSTALLED_APPS = [
     'register.apps.RegisterConfig',
     'bootstrap4',
     'crispy_forms',
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
@@ -101,7 +103,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-DATABASES =  os.environ.get('DATABASE')
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -117,6 +120,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
@@ -147,7 +152,7 @@ GRAPPELLI_ADMIN_TITLE = "Клуб выпускников - администра�
 
 django_heroku.settings(locals())
 
-STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
