@@ -53,6 +53,19 @@ LOGGING = {
     }
 }
 
+ADMINS = (('username', 'user@domain.com'),)
+MANAGERS = ADMINSEMAIL_HOST = 'host'
+SEND_BROKEN_LINK_EMAILS=True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'username'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_USE_TLS = True
+SERVER_EMAIL = 'django@my-domain.com'
+EMAIL_HOST = 'smtp.gmail.com'
+SERVER_EMAIL = EMAIL_HOST_USER
+
 INSTALLED_APPS = [
     'grappelli',
     'ckeditor',
