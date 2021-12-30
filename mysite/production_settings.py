@@ -101,7 +101,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-DATABASES =  os.environ.get(
+DATABASES =  os.environ.get('DATABASE')
 
 AUTH_PASSWORD_VALIDATORS = [
     {
